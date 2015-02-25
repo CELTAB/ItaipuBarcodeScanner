@@ -38,8 +38,8 @@ var app = {
 
     scanner: function() {
             
-       // document.getElementById("codeContent").innerHTML = "";
-       // document.getElementById("codeType").innerHTML = "";
+        document.getElementById("codeType").innerHTML = "";
+        document.getElementById("codeContent").innerHTML = "";
 
         navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
             destinationType: Camera.DestinationType.FILE_URI
@@ -94,13 +94,12 @@ var app = {
 
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        
-        var buttonScan = parentElement.querySelector('#btScanner');
-        buttonScan.setAttribute('style', 'display:block;');
+	//var parentElement = document.getElementById(id);
+      //  var listeningElement = parentElement.querySelector('.listening');
+      //  listeningElement.setAttribute('style', 'display:none;');
 
-        listeningElement.setAttribute('style', 'display:none;');
+        var buttonScan = document.getElementById("btScanner");
+        //buttonScan.setAttribute('style', 'display:block;');
         buttonScan.onclick = app.scanner;
     }
 };
