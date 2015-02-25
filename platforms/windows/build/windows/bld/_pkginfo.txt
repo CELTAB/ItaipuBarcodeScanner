@@ -1,0 +1,1 @@
+C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\AppPackages\CordovaApp.Windows_0.0.1.0_anycpu_debug_Test\CordovaApp.Windows_0.0.1.0_anycpu_debug.appx

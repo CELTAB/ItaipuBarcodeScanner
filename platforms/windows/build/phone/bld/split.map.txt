@@ -1,0 +1,19 @@
+﻿[ResourceMetadata]
+"ResourceDimensions"		"scale-240"
+"ResourceDimensions"		"language-en-us"
+
+[Files]
+"C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\split.pri"			"resources.pri"
+"C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\PackageLayout\www\js\index.js"			"www\js\index.js"
+"C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\PackageLayout\www\index.html"			"www\index.html"
+"C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\PackageLayout\www\img\logo.png"			"www\img\logo.png"
+"C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\PackageLayout\www\css\index.css"			"www\css\index.css"
+"C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\PackageLayout\www\cordova_plugins.js"			"www\cordova_plugins.js"
+"C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\PackageLayout\www\cordova.js"			"www\cordova.js"
+"C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\PackageLayout\images\Wide310x150Logo.scale-240.png"			"images\Wide310x150Logo.scale-240.png"
+"C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\PackageLayout\images\StoreLogo.scale-240.png"			"images\StoreLogo.scale-240.png"
+"C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\PackageLayout\images\Square71x71Logo.scale-240.png"			"images\Square71x71Logo.scale-240.png"
+"C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\PackageLayout\images\Square44x44Logo.scale-240.png"			"images\Square44x44Logo.scale-240.png"
+"C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\PackageLayout\images\Square150x150Logo.scale-240.png"			"images\Square150x150Logo.scale-240.png"
+"C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\PackageLayout\images\SplashScreenPhone.scale-240.png"			"images\SplashScreenPhone.scale-240.png"
+"C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\PackageLayout\config.xml"			"config.xml"

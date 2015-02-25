@@ -1,0 +1,1 @@
+C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\CordovaApp.Windows.jsproj;neutral

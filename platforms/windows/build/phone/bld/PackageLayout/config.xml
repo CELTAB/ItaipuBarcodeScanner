@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="org.celtab.BarcodeScanner" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <preference name="windows-target-version" value="8.0" />
+    <preference name="windows-phone-target-version" value="8.1" />
+    <preference name="windows-target-version" value="8.1" />
+    <name>BarcodeScanner</name>
+    <description>
+        A App application that opens a cammera and decodes several barcodes types</description>
+    <author email="celtab@pti.org.br" href="http://celtab.org.br">
+        Celtab Team
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+</widget>
