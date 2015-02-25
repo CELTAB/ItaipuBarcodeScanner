@@ -2,7 +2,8 @@
 <widget id="org.celtab.BarcodeScanner" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
  <preference name='windows-target-version' value='8.1' />   <name>BarcodeScanner</name>
     <description>
-A BarcodeScanner that can read severals types of barcodes. Used at Itaipu DAM beside other software to identify informations of some machines.</description>
+		A BarcodeScanner that can read severals types of barcodes. Used at Itaipu DAM beside other software to identify informations of some machines.
+	</description>
     <author email="celtab@pti.org.br" href="http://celtab.org.br">
         Celtab Team
     </author>
