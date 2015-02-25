@@ -35,16 +35,73 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
     },
+
+    scanner: function() {
+            
+       // document.getElementById("codeContent").innerHTML = "";
+       // document.getElementById("codeType").innerHTML = "";
+
+        navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+            destinationType: Camera.DestinationType.FILE_URI
+        });
+
+        function onSuccess(imageURI) {
+            // var image = document.getElementById('myImage');
+
+            var img = new Image();
+            
+            img.onload = function () {
+                var canvas = document.createElement('canvas');
+                // resizing image to 320x240 for slow devices
+                var k = (320 + 240) / (img.width + img.height);
+                canvas.width = Math.ceil(img.width * k);
+                canvas.height = Math.ceil(img.height * k);
+                var ctx = canvas.getContext('2d');
+                ctx.drawImage(img, 0, 0, img.width, img.height,
+                              0, 0, canvas.width, canvas.height);
+
+                var data = ctx.getImageData(0, 0, canvas.width, canvas.height);
+
+                var t0 = Date.now();
+
+                // alert("Agora vou processar o código de Barras");
+                var codes = zbarProcessImageData(data);
+                // alert("O código de Barras é: " + codes);
+                // document.getElementById("codeContent").innerHTML = codes;
+                console.log(codes);
+
+                var t = Date.now() - t0;
+                 // document.body.classList.remove('processing');
+
+                if (codes.length === 0) {
+                   document.getElementById("codeContent").innerHTML = "Código Inválido";
+                }
+                  
+                var type = codes[0][0];
+                var data = codes[0][2];
+                // publishing data
+
+                document.getElementById("codeContent").innerHTML = data;
+                document.getElementById("codeType").innerHTML = type;
+              };
+              img.src = imageURI;
+        }
+
+        function onFail(message) {
+            alert('Failed: ' + message);
+        }
+    },
+
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
+        var parentElement = document.getElementById(id);
+        var listeningElement = parentElement.querySelector('.listening');
+        
+        var buttonScan = parentElement.querySelector('#btScanner');
+        buttonScan.setAttribute('style', 'display:block;');
+
+        listeningElement.setAttribute('style', 'display:none;');
+        buttonScan.onclick = app.scanner;
     }
 };
 

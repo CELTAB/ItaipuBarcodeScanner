@@ -70,9 +70,19 @@
 					</NamedResource>
 				</ResourceMapSubtree>
 				<ResourceMapSubtree name="img">
+					<NamedResource name="logo.bkp.png" uri="ms-resource://org.celtab.BarcodeScanner/Files/www/img/logo.bkp.png">
+						<Candidate type="Path">
+							<Value>www\img\logo.bkp.png</Value>
+						</Candidate>
+					</NamedResource>
 					<NamedResource name="logo.png" uri="ms-resource://org.celtab.BarcodeScanner/Files/www/img/logo.png">
 						<Candidate type="Path">
 							<Value>www\img\logo.png</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="Thumbs.db" uri="ms-resource://org.celtab.BarcodeScanner/Files/www/img/Thumbs.db">
+						<Candidate type="Path">
+							<Value>www\img\Thumbs.db</Value>
 						</Candidate>
 					</NamedResource>
 				</ResourceMapSubtree>
@@ -82,6 +92,46 @@
 							<Value>www\js\index.js</Value>
 						</Candidate>
 					</NamedResource>
+					<NamedResource name="zbar-processor.js" uri="ms-resource://org.celtab.BarcodeScanner/Files/www/js/zbar-processor.js">
+						<Candidate type="Path">
+							<Value>www\js\zbar-processor.js</Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+				<ResourceMapSubtree name="plugins">
+					<ResourceMapSubtree name="org.apache.cordova.camera">
+						<ResourceMapSubtree name="src">
+							<ResourceMapSubtree name="windows">
+								<NamedResource name="CameraProxy.js" uri="ms-resource://org.celtab.BarcodeScanner/Files/www/plugins/org.apache.cordova.camera/src/windows/CameraProxy.js">
+									<Candidate type="Path">
+										<Value>www\plugins\org.apache.cordova.camera\src\windows\CameraProxy.js</Value>
+									</Candidate>
+								</NamedResource>
+							</ResourceMapSubtree>
+						</ResourceMapSubtree>
+						<ResourceMapSubtree name="www">
+							<NamedResource name="Camera.js" uri="ms-resource://org.celtab.BarcodeScanner/Files/www/plugins/org.apache.cordova.camera/www/Camera.js">
+								<Candidate type="Path">
+									<Value>www\plugins\org.apache.cordova.camera\www\Camera.js</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="CameraConstants.js" uri="ms-resource://org.celtab.BarcodeScanner/Files/www/plugins/org.apache.cordova.camera/www/CameraConstants.js">
+								<Candidate type="Path">
+									<Value>www\plugins\org.apache.cordova.camera\www\CameraConstants.js</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="CameraPopoverHandle.js" uri="ms-resource://org.celtab.BarcodeScanner/Files/www/plugins/org.apache.cordova.camera/www/CameraPopoverHandle.js">
+								<Candidate type="Path">
+									<Value>www\plugins\org.apache.cordova.camera\www\CameraPopoverHandle.js</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="CameraPopoverOptions.js" uri="ms-resource://org.celtab.BarcodeScanner/Files/www/plugins/org.apache.cordova.camera/www/CameraPopoverOptions.js">
+								<Candidate type="Path">
+									<Value>www\plugins\org.apache.cordova.camera\www\CameraPopoverOptions.js</Value>
+								</Candidate>
+							</NamedResource>
+						</ResourceMapSubtree>
+					</ResourceMapSubtree>
 				</ResourceMapSubtree>
 			</ResourceMapSubtree>
 		</ResourceMapSubtree>

@@ -55,3 +55,11 @@ C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\filema
 C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\filemap.generatedFiles.txt
 C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\main.map.txt
 C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\_pkginfo.txt
+C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\PackageLayout\www\js\zbar-processor.js
+C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\PackageLayout\www\plugins\org.apache.cordova.camera\src\windows\CameraProxy.js
+C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\PackageLayout\www\plugins\org.apache.cordova.camera\www\Camera.js
+C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\PackageLayout\www\plugins\org.apache.cordova.camera\www\CameraConstants.js
+C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\PackageLayout\www\plugins\org.apache.cordova.camera\www\CameraPopoverHandle.js
+C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\PackageLayout\www\plugins\org.apache.cordova.camera\www\CameraPopoverOptions.js
+C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\PackageLayout\www\img\Thumbs.db
+C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\PackageLayout\www\img\logo.bkp.png
