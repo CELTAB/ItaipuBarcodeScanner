@@ -19,22 +19,16 @@
 var app = {
     // Application Constructor
     initialize: function() {
-        this.bindEvents();
+       document.addEventListener('deviceready', this.onDeviceReady, false);
     },
-    // Bind Event Listeners
-    //
-    // Bind any events that are required on startup. Common events are:
-    // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
-    },
+
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        app.scanner;
-        //app.receivedEvent('deviceready');
+        //app.socket('code-128', 'Thiago');
+        app.scanner();
     },
 
     scanner: function() {
@@ -44,8 +38,6 @@ var app = {
         });
 
         function onSuccess(imageURI) {
-
-            // var image = document.getElementById('myImage');
             var img = new Image();
 
             img.onload = function () {
@@ -59,62 +51,36 @@ var app = {
                               0, 0, canvas.width, canvas.height);
 
                 var data = ctx.getImageData(0, 0, canvas.width, canvas.height);
-                var t0 = Date.now();
-
-                // alert("Agora vou processar o código de Barras");
                 var codes = zbarProcessImageData(data);
-                // alert("O código de Barras é: " + codes);
-                // document.getElementById("codeContent").innerHTML = codes;
-                //console.log(codes);
-
-                var t = Date.now() - t0;
-                // document.body.classList.remove('processing');
 
                 if (codes.length === 0) {
-                    app.socket('error', 'Código Inválido');
-                   //document.getElementById("codeContent").innerHTML = "Código Inválido";
+                    app.socket('error', 'InvalidCode');
                 }  
 
                 var type = codes[0][0];
                 var data = codes[0][2];
 
                 app.socket(type, data);
-                // publishing data
-                //document.getElementById("codeContent").innerHTML = data;
-                //document.getElementById("codeType").innerHTML = type;
               };
 
               img.src = imageURI;
         }
 
-
         function onFail(message) {
-
-            alert('Failed: ' + message);
-
+            document.getElementById("codeType").innerHTML = "Failed: " + message;
         }
-
     },
 
     socket: function(type, code){
+       var ws = new WebSocket("ws://192.168.1.45:6788", [type, code]);
+       
+       ws.onerror = function(error){
+            document.getElementById("codeContent").innerHTML = "Connection Failed!!" ;
+       };
 
-        alert('Type: ' + type + '   Code: ' + code);
-        var ws = new WebSocket("ws://localhost:6788", [type, code]);
-    },
-
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-	//var parentElement = document.getElementById(id);
-
-      //  var listeningElement = parentElement.querySelector('.listening');
-
-      //  listeningElement.setAttribute('style', 'display:none;');
-
-
-        //var buttonScan = document.getElementById("btScanner");
-
-        //buttonScan.setAttribute('style', 'display:block;');        
-       // buttonScan.onclick = app.scanner;
+        ws.onopen = function(){
+            document.getElementById("codeContent").innerHTML = "Código enviado";
+        };
     }
 };
 
