@@ -73,15 +73,14 @@ var app = {
                 document.getElementById("codeContent").innerHTML = data;
                 document.getElementById("codeType").innerHTML = type;
 
-                var div = document.getElementById("app");
-                div.querySelector('#btScanner').setAttribute('style', 'display:none;');
-                document.getElementById("btOk").setAttribute('style', 'display:block;');
+                document.getElementById('btScanner').setAttribute('style', 'display:none;');
+                document.getElementById('btOk').setAttribute('style', 'display:block;');
               };
               img.src = imageURI;
         }
 
         function onFail(message) {
-            document.getElementById("codeContent").innerHTML = 'Failed: ' + message);
+            document.getElementById("codeContent").innerHTML = 'Failed: ' + message;
         }
 
     },
