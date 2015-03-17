@@ -15,6 +15,7 @@
 "C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\PackageLayout\www\img\Thumbs.db"			"www\img\Thumbs.db"
 "C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\PackageLayout\www\img\logo.png"			"www\img\logo.png"
 "C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\PackageLayout\www\img\logo.bkp.png"			"www\img\logo.bkp.png"
+"C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\PackageLayout\www\img\icon.png"			"www\img\icon.png"
 "C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\PackageLayout\www\css\index.css"			"www\css\index.css"
 "C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\PackageLayout\www\cordova_plugins.js"			"www\cordova_plugins.js"
 "C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\PackageLayout\www\cordova.js"			"www\cordova.js"

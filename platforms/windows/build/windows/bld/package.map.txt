@@ -7,6 +7,7 @@
 "C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\images\Square70x70Logo.scale-100.png" "images\Square70x70Logo.scale-100.png"
 "C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\images\StoreLogo.scale-100.png" "images\StoreLogo.scale-100.png"
 "C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\images\Wide310x150Logo.scale-100.png" "images\Wide310x150Logo.scale-100.png"
+"C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\www\img\icon.png" "www\img\icon.png"
 "C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\www\img\logo.bkp.png" "www\img\logo.bkp.png"
 "C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\www\img\logo.png" "www\img\logo.png"
 "C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\www\cordova.js" "www\cordova.js"

@@ -44,6 +44,9 @@
       <PackagePath>images\Wide310x150Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\www\img\icon.png">
+      <PackagePath>www\img\icon.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\www\img\logo.bkp.png">
       <PackagePath>www\img\logo.bkp.png</PackagePath>
     </AppxPackagedFile>

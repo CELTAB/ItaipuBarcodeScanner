@@ -63,3 +63,4 @@ C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\Packag
 C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\PackageLayout\www\plugins\org.apache.cordova.camera\www\CameraPopoverOptions.js
 C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\PackageLayout\www\img\Thumbs.db
 C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\PackageLayout\www\img\logo.bkp.png
+C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\PackageLayout\www\img\icon.png

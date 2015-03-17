@@ -36,71 +36,66 @@ var app = {
         app.receivedEvent('deviceready');
     },
 
-    scanner: function() {
-            
-        document.getElementById("codeType").innerHTML = "";
-        document.getElementById("codeContent").innerHTML = "";
-
-        navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
-            destinationType: Camera.DestinationType.FILE_URI
-        });
-
-        function onSuccess(imageURI) {
-            // var image = document.getElementById('myImage');
-
-            var img = new Image();
-            
-            img.onload = function () {
-                var canvas = document.createElement('canvas');
-                // resizing image to 320x240 for slow devices
-                var k = (320 + 240) / (img.width + img.height);
-                canvas.width = Math.ceil(img.width * k);
-                canvas.height = Math.ceil(img.height * k);
-                var ctx = canvas.getContext('2d');
-                ctx.drawImage(img, 0, 0, img.width, img.height,
-                              0, 0, canvas.width, canvas.height);
-
-                var data = ctx.getImageData(0, 0, canvas.width, canvas.height);
-
-                var t0 = Date.now();
-
-                // alert("Agora vou processar o código de Barras");
-                var codes = zbarProcessImageData(data);
-                // alert("O código de Barras é: " + codes);
-                // document.getElementById("codeContent").innerHTML = codes;
-                console.log(codes);
-
-                var t = Date.now() - t0;
-                 // document.body.classList.remove('processing');
-
-                if (codes.length === 0) {
-                   document.getElementById("codeContent").innerHTML = "Código Inválido";
-                }
-                  
-                var type = codes[0][0];
-                var data = codes[0][2];
-                // publishing data
-
-                document.getElementById("codeContent").innerHTML = data;
-                document.getElementById("codeType").innerHTML = type;
-              };
-              img.src = imageURI;
-        }
-
-        function onFail(message) {
-            alert('Failed: ' + message);
-        }
+    scanner: function() {
+        document.getElementById("codeType").innerHTML = "";
+        document.getElementById("codeContent").innerHTML = "";
+
+        navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+            destinationType: Camera.DestinationType.FILE_URI
+        });
+
+        function onSuccess(imageURI) {
+            var img = new Image();
+
+            img.onload = function () {
+                var canvas = document.createElement('canvas');
+                // resizing image to 320x240 for slow devices
+                var k = (320 + 240) / (img.width + img.height);
+
+                canvas.width = Math.ceil(img.width * k);
+                canvas.height = Math.ceil(img.height * k);
+                var ctx = canvas.getContext('2d');
+                ctx.drawImage(img, 0, 0, img.width, img.height,
+                              0, 0, canvas.width, canvas.height);
+
+                var data = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                
+                var codes = zbarProcessImageData(data);
+
+                if (codes.length === 0) {
+                   document.getElementById("codeContent").innerHTML = "Código Inválido";
+                }
+                
+                var type = codes[0][0];
+                var data = codes[0][2];
+                
+                // publishing data
+                document.getElementById("codeContent").innerHTML = data;
+                document.getElementById("codeType").innerHTML = type;
+
+                var div = document.getElementById("app");
+                div.querySelector('#btScanner').setAttribute('style', 'display:none;');
+                document.getElementById("btOk").setAttribute('style', 'display:block;');
+              };
+              img.src = imageURI;
+        }
+
+        function onFail(message) {
+            document.getElementById("codeContent").innerHTML = 'Failed: ' + message);
+        }
+
     },
 
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-	//var parentElement = document.getElementById(id);
-      //  var listeningElement = parentElement.querySelector('.listening');
-      //  listeningElement.setAttribute('style', 'display:none;');
-
-        var buttonScan = document.getElementById("btScanner");
-        //buttonScan.setAttribute('style', 'display:block;');
+
+        var buttonScan = document.getElementById("btScanner");
+        var buttonOk = document.getElementById("btOk");
+
         buttonScan.onclick = app.scanner;
+        buttonOk.onclick = function(){
+            //navigator.app.exitApp();
+        };
     }
 };
 
