@@ -2,4 +2,4 @@ platforms/*
 node_modules/*
 release/*
 
-*/.ftppass
+.ftppass
