@@ -1,4 +1,4 @@
-﻿cordova.define('cordova/plugin_list', function(require, exports, module) {
+cordova.define('cordova/plugin_list', function(require, exports, module) {
 module.exports = [
     {
         "file": "plugins/org.apache.cordova.camera/www/CameraConstants.js",
