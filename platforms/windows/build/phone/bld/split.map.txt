@@ -13,6 +13,7 @@
 "C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\PackageLayout\www\js\index.js"			"www\js\index.js"
 "C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\PackageLayout\www\index.html"			"www\index.html"
 "C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\PackageLayout\www\img\Thumbs.db"			"www\img\Thumbs.db"
+"C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\PackageLayout\www\img\logo2.png"			"www\img\logo2.png"
 "C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\PackageLayout\www\img\logo.png"			"www\img\logo.png"
 "C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\PackageLayout\www\img\logo.bkp.png"			"www\img\logo.bkp.png"
 "C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\build\phone\bld\PackageLayout\www\img\icon.png"			"www\img\icon.png"

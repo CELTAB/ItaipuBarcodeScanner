@@ -30,5 +30,6 @@ module.exports = function(grunt) {
 grunt.loadNpmTasks('grunt-contrib-compress');
 grunt.loadNpmTasks('grunt-ftp-deploy');
 
-grunt.registerTask('default', 'compress', 'ftp-deploy');
+grunt.registerTask('default', 'compress');
+grunt.registerTask('deploy', 'ftp-deploy');
 };

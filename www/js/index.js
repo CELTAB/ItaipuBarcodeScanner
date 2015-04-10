@@ -28,16 +28,10 @@ var app = {
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
-    // deviceready Event Handler
-    //
-    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicitly call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
-        app.receivedEvent('deviceready');
-    },
+    
+    ip: "127.0.0.1",
 
     scanner: function() {
-        document.getElementById("codeType").innerHTML = "";
         document.getElementById("codeContent").innerHTML = "";
 
         navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
@@ -45,6 +39,11 @@ var app = {
         });
 
         function onSuccess(imageURI) {
+
+            var timeoutVar = window.setTimeout(function() {
+                    document.getElementById("codeContent").innerHTML = "Código Inválido";
+            }, 5000);
+
             var img = new Image();
 
             img.onload = function () {
@@ -62,19 +61,19 @@ var app = {
                 
                 var codes = zbarProcessImageData(data);
 
-                if (codes.length === 0) {
+                if (codes.length == 0) {
                    document.getElementById("codeContent").innerHTML = "Código Inválido";
+                   return;
                 }
+
+                window.clearTimeout(timeoutVar);
                 
                 var type = codes[0][0];
                 var data = codes[0][2];
                 
                 // publishing data
-                document.getElementById("codeContent").innerHTML = data;
-                document.getElementById("codeType").innerHTML = type;
-
-                document.getElementById('btScanner').setAttribute('style', 'display:none;');
-                document.getElementById('btOk').setAttribute('style', 'display:block;');
+                document.getElementById("codeContent").innerHTML = type + " | " + data;
+                app.socket(type, data);
               };
               img.src = imageURI;
         }
@@ -86,15 +85,19 @@ var app = {
     },
 
     // Update DOM on a Received Event
-    receivedEvent: function(id) {
+    onDeviceReady: function() {
 
         var buttonScan = document.getElementById("btScanner");
         var buttonOk = document.getElementById("btOk");
-
+    
         buttonScan.onclick = app.scanner;
-        buttonOk.onclick = function(){
-            //navigator.app.exitApp();
+        buttonOk.onclick =  function(){
+            window.close();
         };
+    },
+
+    socket: function(type, code){
+        var ws = new WebSocket("ws://" + app.ip + ":6788", [type, code]);
     }
 };
 

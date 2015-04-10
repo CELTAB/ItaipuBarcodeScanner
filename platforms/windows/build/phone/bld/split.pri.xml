@@ -85,6 +85,11 @@
 							<Value>www\img\logo.png</Value>
 						</Candidate>
 					</NamedResource>
+					<NamedResource name="logo2.png" uri="ms-resource://org.celtab.BarcodeScanner/Files/www/img/logo2.png">
+						<Candidate type="Path">
+							<Value>www\img\logo2.png</Value>
+						</Candidate>
+					</NamedResource>
 					<NamedResource name="Thumbs.db" uri="ms-resource://org.celtab.BarcodeScanner/Files/www/img/Thumbs.db">
 						<Candidate type="Path">
 							<Value>www\img\Thumbs.db</Value>

@@ -53,6 +53,9 @@
     <AppxPackagedFile Include="C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\www\img\logo.png">
       <PackagePath>www\img\logo.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\www\img\logo2.png">
+      <PackagePath>www\img\logo2.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\www\cordova.js">
       <PackagePath>www\cordova.js</PackagePath>
     </AppxPackagedFile>
