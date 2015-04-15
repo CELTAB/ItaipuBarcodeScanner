@@ -28,18 +28,10 @@ var app = {
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
-    // deviceready Event Handler
-    //
-    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicitly call 'app.receivedEvent(...);'
-    // onDeviceReady: function() {
-    //     app.receivedEvent('deviceready');
-    // },
-
+    
     ip: "127.0.0.1",
 
     scanner: function() {
-        //document.getElementById("codeType").innerHTML = "";
         document.getElementById("codeContent").innerHTML = "";
 
         navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
@@ -48,8 +40,10 @@ var app = {
 
         function onSuccess(imageURI) {
 
+            document.getElementById('it').removeAttribute('hidden');
             var timeoutVar = window.setTimeout(function() {
                     document.getElementById("codeContent").innerHTML = "Código Inválido";
+                    document.getElementById('it').setAttribute('hidden', 'true');
             }, 5000);
 
             var img = new Image();
@@ -70,22 +64,19 @@ var app = {
                 var codes = zbarProcessImageData(data);
 
                 if (codes.length == 0) {
-                   //document.getElementById("codeContent").innerHTML = "Código Inválido";
+                   document.getElementById("codeContent").innerHTML = "Código Inválido";
+                   document.getElementById('it').setAttribute('hidden', 'true');
                    return;
                 }
 
                 window.clearTimeout(timeoutVar);
+                document.getElementById('it').setAttribute('hidden', 'true');
                 
                 var type = codes[0][0];
                 var data = codes[0][2];
                 
                 // publishing data
                 document.getElementById("codeContent").innerHTML = type + " | " + data;
-                // document.getElementById("codeType").innerHTML = type;
-
-                //document.getElementById('btScanner').setAttribute('style', 'display:none;');
-               // document.getElementById('btOk').setAttribute('style', 'display:block;');
-
                 app.socket(type, data);
               };
               img.src = imageURI;
@@ -93,6 +84,7 @@ var app = {
 
         function onFail(message) {
             document.getElementById("codeContent").innerHTML = 'Failed: ' + message;
+            document.getElementById('it').setAttribute('hidden', 'true');
         }
 
     },

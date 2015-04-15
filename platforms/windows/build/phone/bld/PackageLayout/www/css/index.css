@@ -65,9 +65,24 @@ body {
   position:absolute;
 }
 
-.imagen{
+.image{
   position:relative;
   text-align:center;
+  margin:auto;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}
+
+.gif{
+  position:relative;
+  text-align:center;
+  margin:auto;
+    top:25px;
+    bottom:0;
+    left:0;
+    right:0;
 }
 
 .btn {
@@ -78,7 +93,6 @@ body {
   color: #ffffff;
   font-size: 20px;
   background: #3498db;
-  text-decoration: none;
 }
 
 /* Landscape layout (with min-width) */
