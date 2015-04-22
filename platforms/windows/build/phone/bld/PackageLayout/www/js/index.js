@@ -34,17 +34,14 @@ var app = {
     scanner: function() {
         document.getElementById("codeContent").innerHTML = "";
 
+        document.getElementById('it').removeAttribute('class');
+        document.getElementById('it').setAttribute('class', 'loading');
+
         navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
             destinationType: Camera.DestinationType.FILE_URI
         });
 
         function onSuccess(imageURI) {
-
-            document.getElementById('it').removeAttribute('hidden');
-            var timeoutVar = window.setTimeout(function() {
-                    document.getElementById("codeContent").innerHTML = "Código Inválido";
-                    document.getElementById('it').setAttribute('hidden', 'true');
-            }, 5000);
 
             var img = new Image();
 
@@ -65,12 +62,11 @@ var app = {
 
                 if (codes.length == 0) {
                    document.getElementById("codeContent").innerHTML = "Código Inválido";
-                   document.getElementById('it').setAttribute('hidden', 'true');
+                   document.getElementById('it').setAttribute('class', 'loading hid');
                    return;
                 }
 
-                window.clearTimeout(timeoutVar);
-                document.getElementById('it').setAttribute('hidden', 'true');
+                document.getElementById('it').setAttribute('class', 'loading hid');
                 
                 var type = codes[0][0];
                 var data = codes[0][2];
@@ -84,7 +80,7 @@ var app = {
 
         function onFail(message) {
             document.getElementById("codeContent").innerHTML = 'Failed: ' + message;
-            document.getElementById('it').setAttribute('hidden', 'true');
+            document.getElementById('it').setAttribute('class', 'loading hid');
         }
 
     },
