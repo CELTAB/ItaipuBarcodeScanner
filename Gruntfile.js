@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 	compress: {
 	    main: {
         	options: {
-	            archive: './release/CordovaApp.zip',
+	            archive: './release/BarcodeScannerApp.zip',
         	    mode: 'zip'
 	        },
         	files: [
