@@ -1,0 +1,21 @@
+﻿{
+  "name": "ItaipuBarcodeScanner",
+  "version": "0.1.0",
+  "author": "CELTAB TEAM<celtab@pti.org.br>",
+  "description": "Aplicativo para decodificação de código de barras através de imagens adquiridas pela câmera do aplicativo",
+  "contributors": [
+    {
+      "name": "Thiago R. M. Bitencourt",
+      "email": "thiago@mbitencourt.com.br"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CELTAB/ItaipuBarcodeScanner.git"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-compress": "^0.13.0",
+    "grunt-ftp-deploy": "^0.1.10"
+  }
+}

@@ -70,9 +70,9 @@
 					</NamedResource>
 				</ResourceMapSubtree>
 				<ResourceMapSubtree name="img">
-					<NamedResource name="logo.bkp.png" uri="ms-resource://org.celtab.BarcodeScanner/Files/www/img/logo.bkp.png">
+					<NamedResource name="load.gif" uri="ms-resource://org.celtab.BarcodeScanner/Files/www/img/load.gif">
 						<Candidate type="Path">
-							<Value>www\img\logo.bkp.png</Value>
+							<Value>www\img\load.gif</Value>
 						</Candidate>
 					</NamedResource>
 					<NamedResource name="logo.png" uri="ms-resource://org.celtab.BarcodeScanner/Files/www/img/logo.png">
@@ -99,6 +99,22 @@
 					</NamedResource>
 				</ResourceMapSubtree>
 				<ResourceMapSubtree name="plugins">
+					<ResourceMapSubtree name="cordova-plugin-splashscreen">
+						<ResourceMapSubtree name="www">
+							<NamedResource name="splashscreen.js" uri="ms-resource://org.celtab.BarcodeScanner/Files/www/plugins/cordova-plugin-splashscreen/www/splashscreen.js">
+								<Candidate type="Path">
+									<Value>www\plugins\cordova-plugin-splashscreen\www\splashscreen.js</Value>
+								</Candidate>
+							</NamedResource>
+							<ResourceMapSubtree name="windows">
+								<NamedResource name="SplashScreenProxy.js" uri="ms-resource://org.celtab.BarcodeScanner/Files/www/plugins/cordova-plugin-splashscreen/www/windows/SplashScreenProxy.js">
+									<Candidate type="Path">
+										<Value>www\plugins\cordova-plugin-splashscreen\www\windows\SplashScreenProxy.js</Value>
+									</Candidate>
+								</NamedResource>
+							</ResourceMapSubtree>
+						</ResourceMapSubtree>
+					</ResourceMapSubtree>
 					<ResourceMapSubtree name="org.apache.cordova.camera">
 						<ResourceMapSubtree name="src">
 							<ResourceMapSubtree name="windows">

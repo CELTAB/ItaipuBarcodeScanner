@@ -64,9 +64,6 @@
       <PackagePath>images\Wide310x150Logo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\www\img\logo.bkp.png">
-      <PackagePath>www\img\logo.bkp.png</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\www\img\logo.png">
       <PackagePath>www\img\logo.png</PackagePath>
     </AppxPackagedFile>
@@ -81,6 +78,12 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\www\js\zbar-processor.js">
       <PackagePath>www\js\zbar-processor.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\www\plugins\cordova-plugin-splashscreen\www\splashscreen.js">
+      <PackagePath>www\plugins\cordova-plugin-splashscreen\www\splashscreen.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\www\plugins\cordova-plugin-splashscreen\www\windows\SplashScreenProxy.js">
+      <PackagePath>www\plugins\cordova-plugin-splashscreen\www\windows\SplashScreenProxy.js</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\www\plugins\org.apache.cordova.camera\src\windows\CameraProxy.js">
       <PackagePath>www\plugins\org.apache.cordova.camera\src\windows\CameraProxy.js</PackagePath>
@@ -99,6 +102,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\www\css\index.css">
       <PackagePath>www\css\index.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\www\img\load.gif">
+      <PackagePath>www\img\load.gif</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Thiago\workspace-celtab\tablet\platforms\windows\www\img\Thumbs.db">
       <PackagePath>www\img\Thumbs.db</PackagePath>

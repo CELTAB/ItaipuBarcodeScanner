@@ -17,6 +17,12 @@
     specific language governing permissions and limitations
     under the License.
 -->
+
+<!--
+  Adapted By: Thiago R. M. Bitencourt
+  e-mail: thiago.mbitencourt@gmail.com
+-->
+
 <html>
     <head>
         <meta charset="utf-8" />
@@ -29,10 +35,25 @@
     </head>
     <body>         
         <div class="app">
-                <!-- <button id="btScanner">Scanner</button> -->
-                <p id="codeType"> </p>
-                <p id="codeContent"> </p>
+        <div  class="imagen">
+            <img src="img/logo.png">
         </div>
+        <br>
+        <div class="btns">
+            <!-- Used only on branch master -->
+            <!--
+            <button id="btScanner" class="btn">Scanner</button>
+            <button id="btOk" class="btn">OK</button>
+                <h1 id="codeContent" style="padding:20px"> </h1> 
+            -->
+
+            <div class="gif">
+                <!-- On branch master is also used the class hid for the img tag -->
+                <img src="img/load.gif" alt="Loading..." class="loading" id="it">
+            </div>
+        </div>
+
+</div>
 	<script type="text/javascript" src="js/zbar-processor.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>

@@ -16,34 +16,37 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
+ /*
+  By: Thiago R. M. Bitencourt
+  e-mail: thiago.mbitencourt@gmail.com
+ */
 var app = {
     // Application Constructor
     initialize: function() {
-       document.addEventListener('deviceready', this.onDeviceReady, false);
+       document.addEventListener('deviceready', this.scanner, false);
     },
-
-    // deviceready Event Handler
-    //
-    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicitly call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
-        //app.socket('code-128', 'Thiago');
-        app.scanner();
-    },
+    
+    // ip and port used for socek connection
+    ip: "127.0.0.1",
+    port: "6788",
 
     scanner: function() {
+        navigator.splashscreen.show();
 
         navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
             destinationType: Camera.DestinationType.FILE_URI
         });
 
         function onSuccess(imageURI) {
+
             var img = new Image();
 
             img.onload = function () {
                 var canvas = document.createElement('canvas');
                 // resizing image to 320x240 for slow devices
                 var k = (320 + 240) / (img.width + img.height);
+
                 canvas.width = Math.ceil(img.width * k);
                 canvas.height = Math.ceil(img.height * k);
                 var ctx = canvas.getContext('2d');
@@ -51,36 +54,37 @@ var app = {
                               0, 0, canvas.width, canvas.height);
 
                 var data = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                
                 var codes = zbarProcessImageData(data);
 
-                if (codes.length === 0) {
-                    app.socket('error', 'InvalidCode');
-                }  
-
+                if (codes.length == 0) {
+                  // If decode fails, send an error to socket and then close the app
+                    app.socket("error", "failed");
+                    window.close();
+                   return;
+                }
+                
                 var type = codes[0][0];
                 var data = codes[0][2];
-
+                
+                // Scanner Success. Send result to socket
                 app.socket(type, data);
+                //Close app after send result
+                window.close();
               };
 
               img.src = imageURI;
         }
 
         function onFail(message) {
-            document.getElementById("codeType").innerHTML = "Failed: " + message;
+          // If capture image fails, send an error to socket and then close the app
+            app.socket("error", "failed");
+            window.close();
         }
     },
 
     socket: function(type, code){
-       var ws = new WebSocket("ws://192.168.1.45:6788", [type, code]);
-       
-       ws.onerror = function(error){
-            document.getElementById("codeContent").innerHTML = "Connection Failed!!" ;
-       };
-
-        ws.onopen = function(){
-            document.getElementById("codeContent").innerHTML = "Código enviado";
-        };
+        var ws = new WebSocket("ws://" + app.ip + ":" + app.port, [type, code]);
     }
 };
 

@@ -2680,6 +2680,7 @@ function copyTempDouble(ptr) {
             if (onload) onload(byteArray);
           };
           img.onerror = function(event) {
+            document.getElementById("codeContent").innerHTML = "Image could not be decoded";
             console.log('Image ' + url + ' could not be decoded');
             if (onerror) onerror();
           };

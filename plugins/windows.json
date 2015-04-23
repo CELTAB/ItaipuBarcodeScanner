@@ -52,6 +52,9 @@
     "installed_plugins": {
         "org.apache.cordova.camera": {
             "PACKAGE_NAME": "BarcodeScanner"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "BarcodeScanner"
         }
     },
     "dependent_plugins": {}

@@ -1,0 +1,6 @@
+hooks/*
+platforms/*
+node_modules/*
+release/*
+
+.ftppass
