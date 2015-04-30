@@ -16,6 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
+ /*
+    By: Thiago R. M. Bitencourt
+    E-mail: thiago.mbitencourt@gmail.com
+ */
 var app = {
     // Application Constructor
     initialize: function() {
@@ -28,8 +33,6 @@ var app = {
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
-    
-    ip: "127.0.0.1",
 
     scanner: function() {
         document.getElementById("codeContent").innerHTML = "";
@@ -73,7 +76,6 @@ var app = {
                 
                 // publishing data
                 document.getElementById("codeContent").innerHTML = type + " | " + data;
-                app.socket(type, data);
               };
               img.src = imageURI;
         }
@@ -95,10 +97,6 @@ var app = {
         buttonOk.onclick =  function(){
             window.close();
         };
-    },
-
-    socket: function(type, code){
-        var ws = new WebSocket("ws://" + app.ip + ":6788", [type, code]);
     }
 };
 

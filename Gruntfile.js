@@ -1,3 +1,7 @@
+/*
+    By: Thiago R. M. Bitencourt
+    E-mail: thiago.mbitencourt@gmail.com
+ */
 module.exports = function(grunt) {
 
   // Project configuration.
@@ -6,7 +10,7 @@ module.exports = function(grunt) {
 	compress: {
 	    main: {
         	options: {
-	            archive: './release/CordovaApp.zip',
+	            archive: './release/BarcodeScannerApp.zip',
         	    mode: 'zip'
 	        },
         	files: [

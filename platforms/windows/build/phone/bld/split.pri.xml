@@ -70,24 +70,14 @@
 					</NamedResource>
 				</ResourceMapSubtree>
 				<ResourceMapSubtree name="img">
-					<NamedResource name="icon.png" uri="ms-resource://org.celtab.BarcodeScanner/Files/www/img/icon.png">
+					<NamedResource name="load.gif" uri="ms-resource://org.celtab.BarcodeScanner/Files/www/img/load.gif">
 						<Candidate type="Path">
-							<Value>www\img\icon.png</Value>
-						</Candidate>
-					</NamedResource>
-					<NamedResource name="logo.bkp.png" uri="ms-resource://org.celtab.BarcodeScanner/Files/www/img/logo.bkp.png">
-						<Candidate type="Path">
-							<Value>www\img\logo.bkp.png</Value>
+							<Value>www\img\load.gif</Value>
 						</Candidate>
 					</NamedResource>
 					<NamedResource name="logo.png" uri="ms-resource://org.celtab.BarcodeScanner/Files/www/img/logo.png">
 						<Candidate type="Path">
 							<Value>www\img\logo.png</Value>
-						</Candidate>
-					</NamedResource>
-					<NamedResource name="logo2.png" uri="ms-resource://org.celtab.BarcodeScanner/Files/www/img/logo2.png">
-						<Candidate type="Path">
-							<Value>www\img\logo2.png</Value>
 						</Candidate>
 					</NamedResource>
 					<NamedResource name="Thumbs.db" uri="ms-resource://org.celtab.BarcodeScanner/Files/www/img/Thumbs.db">
