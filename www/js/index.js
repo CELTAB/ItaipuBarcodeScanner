@@ -96,7 +96,8 @@ var app = {
         buttonScan.onclick = app.scanner;
         buttonOk.onclick =  function(){
             window.close();
-            navigator.app.exitApp();
+            // Use this to close the app when runnin on Android. Not used in this project, because we aims only to generate a Windows 8.1 version. And this statement doesn't work on Windows.
+            //navigator.app.exitApp();
         };
     }
 };
