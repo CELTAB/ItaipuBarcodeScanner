@@ -17,6 +17,11 @@
     specific language governing permissions and limitations
     under the License.
 -->
+
+<!--
+    By: Thiago R. M. Bitencourt
+    E-mail: thiago.mbitencourt@gmail.com
+ -->
 <html>
     <head>
         <meta charset="utf-8" />
@@ -29,17 +34,22 @@
     </head>
     <body>
         <div class="app">
-            <h1>CELTAB - BarcodeScanner</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-            </div>
+        <div  class="imagen">
+            <img src="img/logo.png">
+        </div>
+        <br>
+        <div class="btns">
+            <button id="btScanner" class="btn">Scanner</button>
+            <button id="btOk" class="btn">OK</button>
+                <h1 id="codeContent" style="padding:20px"> </h1>
 
-            <div>
-                <button id="btScanner">Scanner</button>
-                <p id="codeType"></p>
-                <p id="codeContent"></p>
+            <div class="gif">
+                <img src="img/load.gif" alt="Loading..." class="loading hid" id="it">
             </div>
         </div>
+
+</div>
+	<script type="text/javascript" src="js/zbar-processor.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
     </body>

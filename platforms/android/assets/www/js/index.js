@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -16,6 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
+ /*
+    By: Thiago R. M. Bitencourt
+    E-mail: thiago.mbitencourt@gmail.com
+ */
 var app = {
     // Application Constructor
     initialize: function() {
@@ -28,28 +33,26 @@ var app = {
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
-    // deviceready Event Handler
-    //
-    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicitly call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
-        app.receivedEvent('deviceready');
-    },
 
     scanner: function() {
-            
         document.getElementById("codeContent").innerHTML = "";
-        document.getElementById("codeType").innerHTML = "";
+
+        document.getElementById('it').removeAttribute('class');
+        document.getElementById('it').setAttribute('class', 'loading');
+
+        navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+            destinationType: Camera.DestinationType.FILE_URI
+        });
 
         function onSuccess(imageURI) {
-            // var image = document.getElementById('myImage');
 
             var img = new Image();
-            
+
             img.onload = function () {
                 var canvas = document.createElement('canvas');
                 // resizing image to 320x240 for slow devices
                 var k = (320 + 240) / (img.width + img.height);
+
                 canvas.width = Math.ceil(img.width * k);
                 canvas.height = Math.ceil(img.height * k);
                 var ctx = canvas.getContext('2d');
@@ -57,50 +60,44 @@ var app = {
                               0, 0, canvas.width, canvas.height);
 
                 var data = ctx.getImageData(0, 0, canvas.width, canvas.height);
-
-                var t0 = Date.now();
-
-                // alert("Agora vou processar o código de Barras");
+                
                 var codes = zbarProcessImageData(data);
-                // alert("O código de Barras é: " + codes);
-                // document.getElementById("codeContent").innerHTML = codes;
-                console.log(codes);
 
-                var t = Date.now() - t0;
-                 // document.body.classList.remove('processing');
-
-                if (codes.length === 0) {
+                if (codes.length == 0) {
                    document.getElementById("codeContent").innerHTML = "Código Inválido";
+                   document.getElementById('it').setAttribute('class', 'loading hid');
+                   return;
                 }
-                  
+
+                document.getElementById('it').setAttribute('class', 'loading hid');
+                
                 var type = codes[0][0];
                 var data = codes[0][2];
+                
                 // publishing data
-
-                document.getElementById("codeContent").innerHTML = data;
-                document.getElementById("codeType").innerHTML = type;
+                document.getElementById("codeContent").innerHTML = type + " | " + data;
               };
               img.src = imageURI;
         }
 
         function onFail(message) {
-            alert('Failed: ' + message);
+            document.getElementById("codeContent").innerHTML = 'Failed: ' + message;
+            document.getElementById('it').setAttribute('class', 'loading hid');
         }
 
-        navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
-            destinationType: Camera.DestinationType.FILE_URI
-        });
+    },
 
     // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        
-        var buttonScan = parentElement.querySelector('#btScanner');
-        buttonScan.setAttribute('style', 'display:block;');
+    onDeviceReady: function() {
 
-        listeningElement.setAttribute('style', 'display:none;');
+        var buttonScan = document.getElementById("btScanner");
+        var buttonOk = document.getElementById("btOk");
+    
         buttonScan.onclick = app.scanner;
+        buttonOk.onclick =  function(){
+            //window.close();
+            navigator.app.exitApp();
+        };
     }
 };
 

@@ -96,6 +96,7 @@ var app = {
         buttonScan.onclick = app.scanner;
         buttonOk.onclick =  function(){
             window.close();
+            navigator.app.exitApp();
         };
     }
 };
